@@ -1,0 +1,13 @@
+@echo off
+set "https://github.com/votanloc/Update_HIS_Lis/tree/main/Au_chau/MĐSOFT.exe"
+set "output=.\test.txt"
+
+echo Đang tải file từ %url%
+powershell -Command "Invoke-WebRequest -Uri '%url%' -OutFile '%output%'"
+
+if exist %output% (
+    echo Đã tải xong file về: %output%
+) else (
+    echo Tải thất bại!
+)
+pause
